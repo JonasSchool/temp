@@ -4,7 +4,7 @@ Da vermutlich nicht alle ultra Plan haben, was wir in Informatik gemacht haben, 
 **Vorab:**   
 Im Deutschen werden benutzen Dezimalbrüche (Kommazahlen) ein Komma zur Trennung, international üblich ist allerdings ein Punkt. Deswegen ist die deutsche 4,7 (Vierkommasieben) in Java 4.7.  
 
-Wenn im Code ``//`` vorkommt, ist das ein Kommentar. Dort kann man hinterschreiben, was auch immer man möchte, Java ignoriert diese Zeile einfach.  
+Wenn im Code ``//`` vorkommt, ist das ein Kommentar. Dort kann man hinterschreiben, was auch immer man möchte, Java ignoriert einfach alles, was dahinter steht.
 
 **Begriffserklärung:**  
 Normale Klammern: ()  
@@ -21,7 +21,7 @@ Terminal: Das Fenster, in das Java ausgibt, was ihr mit   ``System.out.println()
 7. [Arrays](#arrays)  
 8. [Einzelne Bauteile aus dem Unterricht](#more)  
 9. [Nassi-Shneiderman-Diagramme](#diagram)  
-10. [Code auskommentieren (erklären)](#kommentieren)  
+10. [Code kommentieren (erklären)](#kommentieren)  
 11. [For - De­tail­liert](#fordetail)  
 12. [Nachwort](#nachwort)   
 ## Datentypen <a name="datentypen"></a>
@@ -59,6 +59,7 @@ Die Rechenoperatoren in Java sind identisch zu den Allgemeinen
 |-|subtrahieren|
 |*|multiplizieren|
 |/|dividieren|
+|%|Rest beim Dividieren|
   
 Möchte man zwei Variablen zusammenrechnen, kann man das also ganz einfach tun.  
 ```java
@@ -101,9 +102,16 @@ x++;
 ```
 benutzen. Gleiches geht natürlich auch bei der Subtraktion:
 ```java
-x--
+x--;
 ```
-zieht genau 1 ab.
+zieht genau 1 ab.  
+  
+``%`` wird benutzt, um nach einer Division mit Rest den Rest zu erhalten
+```java
+int x = 10;
+System.out.println(x % 3);
+```
+gibt 1 aus, da 3 dreimal in die 10 reinpasst, und 1 ist der Rest.
 
 ## Variablen initialisieren<a name="variablen"></a>
 Variablen haben einen Datentyp, einen Namen und einen Wert. Wenn man Variablen initialisiert (erstellt), gibt man zuerst den Datentyp, dann den Namen und dann den Wert an. Am Ende der Zeile muss ein ``;`` stehen.  
@@ -268,7 +276,7 @@ Code wird ausgefuehrt
 (...  heißt, es geht immer so weiter)
 
 ## Arrays<a name="arrays"></a>
-Ein Array speichert mehrere Variablen gleichzeitig, allerdings nur von einem Datentyp. Es gibt also String-Arrays, die nur Strings speichern, Int-Arrays, die nur Ints speichern, usw. Die Daten werden in geschweiften Klammern angegeben und mit einem Komma getrennt.
+Ein Array speichert mehrere Variablen gleichzeitig, allerdings nur von einem Datentyp. Es gibt also String-Arrays, die nur Strings speichern, Int-Arrays, die nur Integer speichern, usw. Die Daten werden in geschweiften Klammern angegeben und mit einem Komma getrennt.
 ```java
 int[] temperaturen = {21, 24, 31};
 String[] schulfaecher = {"Deutsch", "Englisch", "Chemie"};
@@ -304,7 +312,7 @@ Scanner neuerScanner = new Scanner(System.in);
 Dann kann man Daten aus dem Terminal zu Variablen hinzufügen. Je nach Datentyp geht das anders:
 ```java
 //String
-String name = neuerScanner.nextLine();
+String name = neuerScanner.next();
 
 //Integer
 int nummer = neuerScanner.nextInt();
@@ -315,7 +323,20 @@ double dezimalzahl = neuerScanner.nextDouble();
 //float
 float kommazahl = neuerScanner.nextFloat();
 ```
-
+**Eingabefenster:**
+Ein Eingabefenster kann statt einem Scanner benutzt werden, um Benutzereingaben zu speichern. Anstatt das Terminal zu lesen, öffnet das Programm ein kleines Fenster, in das man seinen Wert einrägt.  
+  
+Am Anfang des Codes muss folgendes stehen, um es zu importieren: 
+```java
+import javax.swing.JOptionPane;
+```
+Dann kann man eine Variable erstellen, die ein solches Eingabefenster öffnet:
+```java
+String name = JOptionPane.showInputDialog("Gib deinen Namen ein: ");
+```
+In die normalen Klammern schreibt man als String (in Anführungszeichen), was im Eingabefenster über der Eingabezeile stehen soll, normalerweise stehen dort also Anweisungen, was für einen Wert man eintragen soll.  
+Diese Eingabemethode ist nur für Strings geeignet!
+  
 **Länge von Variablen:**
 braucht man die Länge einer Variable, kann man ``<var>.length()`` benutzen:
 ```java
@@ -324,9 +345,12 @@ System.out.println(stadt.length());
 ```
 gibt 6 (als Integer) aus.
 
+
 ## Nassi-Shneiderman-Diagramme<a name="diagram"></a>
 Nassi-Shneiderman-Diagramm zeigen einen theoretischen Programmablauf.
-![Nassi-Shneidermann-Diagramm](https://external-content.duckduckgo.com/iu/?u=http://de.academic.ru/pictures/dewiki/83/StruktErweitert.png&f=1&nofb=1)
+![Nassi-Shneidermann-Diagramm](https://external-content.duckduckgo.com/iu/?u=http://de.academic.ru/pictures/dewiki/83/StruktErweitert.png&f=1&nofb=1)  
+  
+  
 Dieses Diagramm beschreibt einen Programmablauf, der den Nutzer nach seiner Zensur (1-6) fragt und diese in ``zahlZensur`` speichert. Danach setzt das Programm den String ``zeichenZensur`` jeweils zum Wortpendant und gibt ihn aus.  
   
 Der Ablauf ist folgender:
@@ -376,7 +400,7 @@ else {
 System.out.println("Ihre eingegebene Zensur in Worten: " + zeichenZensur);
 ```
 
-## Code auskommentieren (erklären)<a name="kommentieren"></a>
+## Code kommentieren (erklären)<a name="kommentieren"></a>
 
 In der Arbeit müssen wir vielleicht in einem fertigen Code erklären, was gewisse Teile machen. Das macht man mit Kommentaren im Code (oben erklärt). Als Beispiel der Code von Gerade:
 ```java
@@ -428,7 +452,7 @@ Er gibt aus:
 2
 ```
 
-**Warum macht er das?**
+**Warum macht es das?**
 In
 ```java
 for (int i = 0; i < 3; i++) {
