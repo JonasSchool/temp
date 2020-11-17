@@ -1,73 +1,73 @@
 # Kram für die Informatikarbeit
-Da vermutlich nicht alle ultra Plan haben, was wir in Informatik gemacht haben, hier eine hoffentlich hilfreiche Zusammenfassung.
+Da vermutlich nicht alle ultra Plan haben, was wir in Informatik gemacht haben, hier eine hoffentlich hilfreiche Zusammenfassung.  
 
-**Vorab:** 
-Im Deutschen werden benutzen Dezimalbrüche (Kommazahlen) ein Komma zur Trennung, international üblich ist allerdings ein Punkt. Deswegen ist die deutsche 4,7 (Vierkommasieben) in Java 4.7.
+**Vorab:**   
+Im Deutschen werden benutzen Dezimalbrüche (Kommazahlen) ein Komma zur Trennung, international üblich ist allerdings ein Punkt. Deswegen ist die deutsche 4,7 (Vierkommasieben) in Java 4.7.  
 
-Wenn im Code ``//`` vorkommt, ist das ein Kommentar. Dort kann man hinterschreiben, was auch immer man möchte, Java ignoriert diese Zeile einfach.
+Wenn im Code ``//`` vorkommt, ist das ein Kommentar. Dort kann man hinterschreiben, was auch immer man möchte, Java ignoriert diese Zeile einfach.  
 
-**Begriffserklärung:**
-Normale Klammern: ()
-Eckige Klammern: []
-Geschweifte Klammern: {}
-Terminal: Das Fenster, in das Java ausgibt, was ihr mit ``System.out.println();`` ausgeben lasst
+**Begriffserklärung:**  
+Normale Klammern: ()  
+Eckige Klammern: []  
+Geschweifte Klammern: {}  
+Terminal: Das Fenster, in das Java ausgibt, was ihr mit   ``System.out.println();`` ausgeben lasst  
 # Inhalt
-1. [Datentypen](#datentypen)
-2. [Operatoren](#operatoren)
-3. [Variablen](#variablen)
-4. [If-Abfrage](#if)
-5. [If-Else](#ifelse)
-6. [While-Schlefe](#while)
-7. [Arrays](#arrays)
-8. [Einzelne Bauteile aus dem Unterricht](#more)
-9. [Nassi-Shneiderman-Diagramme](#diagram)
-10. [Code auskommentieren (erklären)](#kommentieren) 
-11. [For - De­tail­liert](#fordetail) 
-12. [Nachwort](#nachwort) 
+1. [Datentypen](#datentypen)  
+2. [Operatoren](#operatoren)  
+3. [Variablen](#variablen)  
+4. [If-Abfrage](#if)  
+5. [If-Else](#ifelse)  
+6. [While-Schlefe](#while)  
+7. [Arrays](#arrays)  
+8. [Einzelne Bauteile aus dem Unterricht](#more)  
+9. [Nassi-Shneiderman-Diagramme](#diagram)  
+10. [Code auskommentieren (erklären)](#kommentieren)  
+11. [For - De­tail­liert](#fordetail)  
+12. [Nachwort](#nachwort)   
 ## Datentypen <a name="datentypen"></a>
-Variablen kommen in verschiedenen Formen, genannt Datentypen, vor. Das sind z.B.:
-
-**Strings:**
-Generelle Zeichenfolgen aus Buchstaben, Zahlen, Sonderzeichen usw. Strings sind immer von Anführungszeichen umschlossen.
-Bsp: "String"
-
-**Char:**
-Ein einzelner Buchstabe.
-Bsp: "c"
-
-**Integer:**
-Ganzzahlen, kurz Int
-Bsp: 15
-
-**Float:**
-Kommazahl, benutzt man normalerweise nicht
-Bsp: 4.7
-
-**Double:**
-Kommazahl, kann 2x mehr speichern als Float, wird normalerweise für Kommazahlen benutzt
-Bsp: 4.7
-
-**Array:**
-Speichert mehrere Variablen gleichzeitig, allerdings nur von einem Datentyp. Es gibt also String-Arrays, die nur Strings speichern, Int-Arrays, die nur Ints speichern, usw. Die Daten werden in geschweiften Klammern angegeben und mit einem Komma getrennt.
-Bsp: {1, 2}
-
+Variablen kommen in verschiedenen Formen, genannt Datentypen, vor. Das sind z.B.:  
+  
+**Strings:**  
+Generelle Zeichenfolgen aus Buchstaben, Zahlen, Sonderzeichen usw. Strings sind immer von Anführungszeichen umschlossen.  
+Bsp: "String"  
+  
+**Char:**  
+Ein einzelner Buchstabe.  
+Bsp: "c"  
+  
+**Integer:**  
+Ganzzahlen, kurz Int  
+Bsp: 15  
+  
+**Float:**  
+Kommazahl, benutzt man normalerweise nicht  
+Bsp: 4.7  
+  
+**Double:**  
+Kommazahl, kann 2x mehr speichern als Float, wird normalerweise für Kommazahlen benutzt  
+Bsp: 4.7  
+  
+**Array:**  
+Speichert mehrere Variablen gleichzeitig, allerdings nur von einem Datentyp. Es gibt also String-Arrays, die nur Strings speichern, Int-Arrays, die nur Ints speichern, usw. Die Daten werden in geschweiften Klammern angegeben und mit einem Komma getrennt.  
+Bsp: {1, 2}  
+  
 ## Operatoren<a name="operatoren"></a>
-Die Rechenoperatoren in Java sind identisch zu den Allgemeinen
+Die Rechenoperatoren in Java sind identisch zu den Allgemeinen  
 |Operator|Aktion|
 |--------|--------|
 |+|addieren|
 |-|subtrahieren|
 |*|multiplizieren|
 |/|dividieren|
-
-Möchte man zwei Variablen zusammenrechnen, kann man das also ganz einfach tun.
+  
+Möchte man zwei Variablen zusammenrechnen, kann man das also ganz einfach tun.  
 ```java
 int x = 2;
 int y = 3;
 System.out.println(x + y);
 ```
-gibt 5 aus.
-
+gibt 5 aus.  
+  
 Wenn mann zwei Strings addiert, werden sie einfach aneinander gehangen.
 ```java
 String a = "Haus";
@@ -75,10 +75,10 @@ String b = "boot";
 
 System.out.println(a + b);
 ```
-gibt ``Hausboot`` aus
+gibt ``Hausboot`` aus  
 
-Möchte man zu einer Variable dauerhaft etwas hinzufügen, sind diese beiden Wege möglich.
-
+Möchte man zu einer Variable dauerhaft etwas hinzufügen, sind diese beiden Wege möglich.  
+  
 Weg 1:
 ```java
 int x = 3;
@@ -92,8 +92,8 @@ int x = 3;
 
 x += 1;
 ```
-Weg 2 ist einfach nur kürzer, sonst gibt es keine Unterschiede. Neben ``+=`` gibt es natürlich auch noch ``-=``, ``*=`` und ``/=``.
-
+Weg 2 ist einfach nur kürzer, sonst gibt es keine Unterschiede. Neben ``+=`` gibt es natürlich auch noch ``-=``, ``*=`` und ``/=``.  
+    
 Möchte man einen Integer um genau 1 erhöhen, kann man auch 
 ```java
 int x = 3;
@@ -106,7 +106,7 @@ x--
 zieht genau 1 ab.
 
 ## Variablen initialisieren<a name="variablen"></a>
-Variablen haben einen Datentyp, einen Namen und einen Wert. Wenn man Variablen initialisiert (erstellt), gibt man zuerst den Datentyp, dann den Namen und dann den Wert an. Am Ende der Zeile muss ein ``;`` stehen.
+Variablen haben einen Datentyp, einen Namen und einen Wert. Wenn man Variablen initialisiert (erstellt), gibt man zuerst den Datentyp, dann den Namen und dann den Wert an. Am Ende der Zeile muss ein ``;`` stehen.  
 
 **Bsp mit String:**
 ```java
@@ -140,7 +140,7 @@ int x;
 ```
 ``x`` existiert nun, hat aber keinen Wert.
 
-Möchte man Variablen später verändern kann man das einfach mit ``name = wert``
+Möchte man Variablen später verändern kann man das einfach mit ``name = wert``  
 Bsp:
 ```java
 //Variable wird erstellt
@@ -166,7 +166,6 @@ if (x == y) {
 }
 ```
 gibt ``wahr`` ausl
-
 ```java
 int x = 1;
 int y = 2;
@@ -187,8 +186,8 @@ if (x == y) {
     System.out.println("falsch");
 }
 ```
-gibt ``falsch`` aus.
-
+gibt ``falsch`` aus.  
+  
 ``!=`` ist das Gegenteil von ``==``, es vergleicht, ob etwas ungleich ist.
 ```java
 int x = 1;
@@ -199,8 +198,8 @@ if (x != y) {
     System.out.println("falsch");
 }
 ```
-gibt ``wahr`` aus.
-
+gibt ``wahr`` aus.  
+  
 Hinter ``else`` kann man eine weitere If-Abfrage machen, um so mehr als eine Möglichkeit zu berücksichtigen.
 ```java
 int x = 1;
@@ -230,8 +229,8 @@ Code wurde ausgefuehrt
 Code wurde ausgefuehrt
 ```
 ``int i = 0;`` erstellt die Variable ``i``
-``i < 3;`` ist die Bedingung, dass der Code nochmal ausgeführt wird. Sollte ``i`` 3 oder größer sein, wird er nicht wiederholt.
-``i++`` erhöht ``i`` am Ende um 1
+``i < 3;`` ist die Bedingung, dass der Code nochmal ausgeführt wird. Sollte ``i`` 3 oder größer sein, wird er nicht wiederholt.  
+``i++`` erhöht ``i`` am Ende um 1  
 
 Man kann auch die Variable ``i`` innerhalb der Schleife verwenden
 ```java
@@ -245,8 +244,8 @@ gibt aus:
 1
 2
 ```
-Warum 0, 1, 2 und nicht 1, 2, 3? Am Anfang ist ``i = 0``. Es wird abgefragt, ob ``i`` kleiner als 3 ist. Ist ``i`` das, wird der Code erst ausgeführt, dann wird ``i`` erst um 1 erhöht.
-
+Warum 0, 1, 2 und nicht 1, 2, 3? Am Anfang ist ``i = 0``. Es wird abgefragt, ob ``i`` kleiner als 3 ist. Ist ``i`` das, wird der Code erst ausgeführt, dann wird ``i`` erst um 1 erhöht.  
+  
 Wenn jetzt noch Fragen offen sind, ist am Ende nochmal eine For-Schleife Iteration (Durchlauf) für Iteration erklärt.
 
 ## While-Schleife<a name="while"></a>
@@ -281,8 +280,8 @@ String[] schulfaecher = {"Deutsch", "Englisch", "Chemie"};
 //ich möchte wissen, was an zweiter Stelle im Array steht
 System.out.println(schulfaecher[1]);
 ```
-gibt ``Englisch`` aus. Warum ``schulfaecher[1]``, wenn ich doch die zweite Stelle im Array möchte? Weil man bei Arrays bei 0 anfängt zu zählen. Der erste Wert ist also an Stelle 0, der zweite an Stelle 1, usw.
-
+gibt ``Englisch`` aus. Warum ``schulfaecher[1]``, wenn ich doch die zweite Stelle im Array möchte? Weil man bei Arrays bei 0 anfängt zu zählen. Der erste Wert ist also an Stelle 0, der zweite an Stelle 1, usw.  
+  
 Werte innerhalb des Arrays ändern geht genau wie bei anderen Variablen, nur das man die Stelle, an welcher man den Wert ändern möchte, angeben muss:
 ```java
 String[] schulfaecher = {"Deutsch", "Englisch", "Chemie"};
@@ -328,8 +327,8 @@ gibt 6 (als Integer) aus.
 ## Nassi-Shneiderman-Diagramme<a name="diagram"></a>
 Nassi-Shneiderman-Diagramm zeigen einen theoretischen Programmablauf.
 ![Nassi-Shneidermann-Diagramm](https://external-content.duckduckgo.com/iu/?u=http://de.academic.ru/pictures/dewiki/83/StruktErweitert.png&f=1&nofb=1)
-Dieses Diagramm beschreibt einen Programmablauf, der den Nutzer nach seiner Zensur (1-6) fragt und diese in ``zahlZensur`` speichert. Danach setzt das Programm den String ``zeichenZensur`` jeweils zum Wortpendant und gibt ihn aus.
-
+Dieses Diagramm beschreibt einen Programmablauf, der den Nutzer nach seiner Zensur (1-6) fragt und diese in ``zahlZensur`` speichert. Danach setzt das Programm den String ``zeichenZensur`` jeweils zum Wortpendant und gibt ihn aus.  
+  
 Der Ablauf ist folgender:
 1. Variablen ``zahlZensur`` (Integer) und ``zeichenZensur`` (String) werden erstellt.
 2. Programm gibt aus "Geben Sie die Zensur als Zahl ein."
@@ -338,10 +337,10 @@ Der Ablauf ist folgender:
 Sollte ``zahlZensur == 1`` aber nicht wahr sein, vergleicht es ``zahlZensur`` mit 2. Sollte ``zahlZensur == 2`` wahr sein, setzt es ``zeichenZensur``  zu "gut". 
 Sollte auch das nicht wahr sein, versucht es 3, usw. 
 Wenn selbst ``zahlZensur == 6 `` nicht wahr sein sollte, setzt es ``zeichenZensur`` zu "ungültig"
-5. Am Ende gibt das Programm dann "Ihre eingegebene Zensur in Worten: " und ``zeichenZensur`` aus.
-
-Gibt man also 2 ein, gibt das Programm ``Ihre eingegebene Zensur in Worten: gut`` aus.
-
+5. Am Ende gibt das Programm dann "Ihre eingegebene Zensur in Worten: " und ``zeichenZensur`` aus.  
+  
+Gibt man also 2 ein, gibt das Programm ``Ihre eingegebene Zensur in Worten: gut`` aus.  
+  
 Das ganze in Java-Code würde so aussehen:
 ```java
 // 1. Schritt  
@@ -436,8 +435,8 @@ for (int i = 0; i < 3; i++) {
 ```
 wird zuerst ein Integer erstellt: ``i``. Dieser hat den Wert 0.
 Als nächstes wird abgefragt, ob dieser Wert eine bestimmte Bedingung erfüllt, in diesem Fall, dass ``i`` kleiner als 3 ist.
-Der Letzte Teil erhöht ``i`` um genau 1.
-
+Der Letzte Teil erhöht ``i`` um genau 1.  
+  
 Wenn das Programm läuft und zu dieser Stelle im Code kommt, passiert also folgendes:
 1. Die Variable wird erstellt.
 2. Das Programm guckt, ob die Bedinung erfüllt ist.
@@ -453,8 +452,8 @@ for (int i = 0; i < 3; i++) {
    System.out.println(i);
 }
 ```
-In diesem Praxisbeispiel würde das also heißen: 
-
+In diesem Praxisbeispiel würde das also heißen:   
+  
 1. ``i`` wird mit dem Wert 0 erstellt.
 2. ``i`` ist unter 3
 3. Der Code in den geschweiften Klammern wird ausgeführt, das Programm schreibt also ``i`` (momentan 0) in das Terminal
