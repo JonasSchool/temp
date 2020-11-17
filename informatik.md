@@ -2,7 +2,7 @@
 Da vermutlich nicht alle ultra Plan haben, was wir in Informatik gemacht haben, hier eine hoffentlich hilfreiche Zusammenfassung.  
 
 **Vorab:**   
-Im Deutschen benutzen Dezimalbrüche (Kommazahlen) ein Komma zur Trennung, international üblich ist allerdings ein Punkt. Deswegen ist die deutsche 4,7 (Vierkommasieben) in Java 4.7.  
+Im Deutschen benutzen Dezimalbrüche (Kommazahlen) ein Komma zur Trennung, international üblich ist allerdings ein Punkt. Deswegen ist die deutsche ``4,7`` (Vierkommasieben) in Java ``4.7``  
 
 Wenn im Code ``//`` vorkommt, ist das ein Kommentar. Dort kann man hinterschreiben, was auch immer man möchte, Java ignoriert einfach alles, was dahinter steht.
 
